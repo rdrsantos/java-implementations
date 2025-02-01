@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bbb
+      MYSQL_USER: rdr
+      MYSQL_PASSWORD: rdr
+    ports:
+      - "3306:3306"
+    networks:
+      - my_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_container
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: rdr
+      RABBITMQ_DEFAULT_PASS: rdr
+    ports:
+      - "5672:5672"  # Porta para comunicação com a aplicação
+      - "15672:15672" # Porta do painel de administração
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

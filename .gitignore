@@ -22,3 +22,35 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Ignorar todas as configurações do IntelliJ IDEA em qualquer subpasta
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+
+# Ignorar diretórios de saída comuns
+**/out/
+**/target/
+**/build/
+
+# Ignorar configurações específicas do IntelliJ
+**/workspace.xml
+**/tasks.xml
+**/usage.statistics.xml
+**/dictionaries/
+**/shelf/
+
+# Ignorar arquivos gerados por compilação
+**/bin/
+**/.gradle/
+**/.mvn/
+**/logs/
+**/*.log
+
+# Ignorar dependências baixadas
+**/.cache/
+**/.classpath/
+**/.project/
+**/.settings/
+**/.vscode/

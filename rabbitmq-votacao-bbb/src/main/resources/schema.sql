@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS candidato
+(
+    id BIGINT AUTO_INCREMENT,
+    nome VARCHAR(235) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS voto
+(
+    id BIGINT AUTO_INCREMENT,
+    candidato_id BIGINT NOT NULL,
+    data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (candidato_id) REFERENCES candidato(id)
+);
